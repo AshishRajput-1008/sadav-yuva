@@ -245,6 +245,8 @@ async function fetchSubCategoryNews(subCategory: string): Promise<NewsItem[]> {
     return normalizeNewsResponse(await res.json());
 }
 
+console.log(fetchSubCategoryNews("cyber rimes"));
+
 // Fan-out across all confirmed subcategories, merge, sort by newest,
 // then trim to PAGE_SIZE so the "All" tab reads like a real feed.
 async function fetchAllTabNews(): Promise<NewsItem[]> {

@@ -15,7 +15,7 @@ export async function getAllTazaHalchalArticles(
   category: string,
   page = 1,
   pageSize = 8
-): Promise<any[]> {
+): Promise<unknown[]> {
   if (!API_BASE_URL) return [];
 
   try {
@@ -37,7 +37,7 @@ export async function getCategoryArticles(
   category: string,
   page = 1,
   pageSize = 8
-): Promise<any[]> {
+): Promise<unknown[]> {
   if (!API_BASE_URL) return [];
 
   try {
@@ -60,7 +60,7 @@ export async function getSubCategoryArticles(
   subcategory: string,
   page = 1,
   pageSize = 8
-): Promise<any[]> {
+): Promise<unknown[]> {
   if (!API_BASE_URL) return [];
 
   try {
@@ -123,7 +123,7 @@ export async function getNewsByState(
   state: string,
   page = 1,
   pageSize = 8
-): Promise<any[]> {
+): Promise<unknown[]> {
   if (!API_BASE_URL) return [];
 
   try {
