@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import "./globals.css";
 import {
   Plus_Jakarta_Sans,
   Nunito_Sans,
   JetBrains_Mono,
 } from "next/font/google";
+
 import SiteHeader from "@/app/components/Header";
 import LayoutFooter from "@/app/components/LayoutFooter";
 
@@ -28,6 +30,43 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: "Sadaiv Yuva Foundation",
+    template: "%s | Sadaiv Yuva Foundation",
+  },
+  description:
+    "Sadaiv Yuva Foundation - Empowering youth through education, cyber awareness, social welfare, and community development.",
+
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+
+  openGraph: {
+    title: "Sadaiv Yuva Foundation",
+    description:
+      "Empowering youth through education, cyber awareness, social welfare, and community development.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Sadaiv Yuva Foundation Logo",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Sadaiv Yuva Foundation",
+    description:
+      "Empowering youth through education, cyber awareness, social welfare, and community development.",
+    images: ["/logo.png"],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -45,7 +84,7 @@ export default function RootLayout({
           {children}
         </main>
 
-<LayoutFooter />
+        <LayoutFooter />
       </body>
     </html>
   );

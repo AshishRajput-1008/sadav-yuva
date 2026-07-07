@@ -1,4 +1,3 @@
-
 // ── Import your 4 fraud-type images — adjust paths as needed ──
 
 "use client";
@@ -34,7 +33,7 @@ const storiesStyles = `
   }
 
   .stories-heading h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 1.12;
@@ -44,6 +43,7 @@ const storiesStyles = `
   }
 
   .stories-subtext {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     line-height: 1.75;
     color: #46512a;
@@ -58,7 +58,7 @@ const storiesStyles = `
     gap: 16px;
   }
 
-  /* Cards grid — now a horizontally scrollable row instead of fixed 2-col */
+  /* Cards grid — horizontally scrollable row */
   .stories-grid {
     display: flex;
     gap: 24px;
@@ -109,7 +109,7 @@ const storiesStyles = `
   }
 
   .story-card-title {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 22px;
     font-weight: 700;
     color: #2c3a04;
@@ -118,6 +118,7 @@ const storiesStyles = `
   }
 
   .story-card-desc {
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     color: #46512a;
@@ -129,7 +130,7 @@ const storiesStyles = `
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     font-size: 15px;
     color: #2c3a04;

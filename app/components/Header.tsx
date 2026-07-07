@@ -1079,7 +1079,7 @@ body { top: 0 !important; position: static !important; }
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 10px 14px;
+  padding: 9px 18px 9px 21px;
 }
 
 /* Elite premium membership chip — mobile (text-only, no icon, no accent bar) */
@@ -1166,7 +1166,7 @@ body { top: 0 !important; position: static !important; }
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.20);
   border-radius: 9px;
-  padding: 10px 14px;
+  padding: 7px 24px;
   min-width: 72px;
   cursor: pointer;
   white-space: nowrap;
@@ -1338,6 +1338,19 @@ body { top: 0 !important; position: static !important; }
 .syf-drawer-link.mobile-active { color: #FF6B00; }
 .syf-drawer-link .arrow { color: rgba(255,255,255,0.22); font-size: 18px; line-height: 1; transition: transform 0.2s, color 0.2s; }
 .syf-drawer-link.dd-open .arrow { transform: rotate(90deg); color: #FF6B00; }
+
+.syf-drawer-quicklinks {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 4px;
+}
+.syf-drawer-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(255,107,0,0.55);
+  padding: 12px 20px 4px;
+}
 .syf-mobile-sub {
   display: none;
   flex-direction: column;
@@ -1515,12 +1528,12 @@ body { top: 0 !important; position: static !important; }
 }
 @media (max-width: 400px) {
   .syf-mob-brand-name { font-size: 13px; }
-  .syf-mob-actions-row { padding: 9px 32px; gap: 6px; }
+  .syf-mob-actions-row {   padding: 9px 18px 9px 21px; gap: 6px; }
   .syf-mob-elite-title { font-size: 10.5px; }
   .syf-mob-elite-inner { padding: 0 5px; }
   .syf-mob-btn-donate { font-size: 11px; padding: 7px 6px; }
-  .syf-mob-lang-btn { font-size: 12px; padding: 7px 16px; min-width: 58px; }
-.syf-mob-logo-img { width: 68px; height: 82px; 
+  .syf-mob-lang-btn { font-size: 12px; padding: 7px 24px; min-width: 58px; }
+.syf-mob-logo-img { width: 76px; height: 90px; 
   .syf-mobile-main { height: 82px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1861,6 +1874,14 @@ export default function SiteHeader({
         {/* ══ MOBILE: UTILITY BAR ══ */}
         <div className="syf-mobile-utility">
           <div className="syf-mob-actions-row">
+              <a href="#membership" className="syf-mob-btn-elite">
+              <span className="syf-mob-elite-inner">
+                <span className="syf-mob-elite-title">Membership</span>
+              </span>
+            </a>
+            <a href="#donate" className="syf-mob-btn-donate">
+              <IcoHeart /> DONATE
+            </a>
             <div ref={mobLangRef} className="syf-mob-lang-wrap">
               <button
                 className="syf-mob-lang-btn"
@@ -1889,14 +1910,8 @@ export default function SiteHeader({
                 </div>
               )}
             </div>
-            <a href="#donate" className="syf-mob-btn-donate">
-              <IcoHeart /> DONATE
-            </a>
-            <a href="#membership" className="syf-mob-btn-elite">
-              <span className="syf-mob-elite-inner">
-                <span className="syf-mob-elite-title">Membership</span>
-              </span>
-            </a>
+            
+          
           </div>
         </div>
 
@@ -1907,6 +1922,26 @@ export default function SiteHeader({
           aria-hidden={!menuOpen}
           aria-label="Mobile navigation"
         >
+
+<div className="syf-drawer-quicklinks">
+            <div className="syf-drawer-section-label">Quick Links</div>
+            {QUICK_LINKS.map((ql) => (
+              <a
+                key={ql.href}
+                href={ql.href}
+                className={`syf-drawer-link${activeHref === ql.href ? " mobile-active" : ""}`}
+                onClick={() => setMenuOpen(false)}
+                aria-current={activeHref === ql.href ? "page" : undefined}
+              >
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+                  {ql.icon && <IcoYouth />}
+                  {ql.label}
+                </span>
+                <span className="arrow" aria-hidden="true">›</span>
+              </a>
+            ))}
+          </div>
+
           {navLinks.map((link) => {
             const hasDD  = link.dropdown && link.dropdown.length > 0;
             const isOpen = mobileDD === link.label;
@@ -1952,7 +1987,9 @@ export default function SiteHeader({
             );
           })}
 
-          <div className="syf-drawer-footer">
+
+
+          {/* <div className="syf-drawer-footer">
             <a href="#membership" className="syf-drawer-membership" onClick={() => setMenuOpen(false)}>
               <span className="syf-drawer-membership-bar" aria-hidden="true" />
               <span className="syf-drawer-membership-inner">
@@ -1976,7 +2013,7 @@ export default function SiteHeader({
                 <IcoHeart /> Donate Now
               </a>
             </div>
-          </div>
+          </div> */}
         </nav>
 
       </header>

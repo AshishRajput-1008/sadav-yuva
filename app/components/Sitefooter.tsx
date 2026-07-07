@@ -61,12 +61,11 @@ const footerStyles = `
   }
 
   .footer-brand-desc {
-  margin-left:35px;
     font-family: 'DM Mono', 'Courier New', monospace;
     font-size: 15px;
     line-height: 1.7;
     color: #6b7a6a;
-    margin: 0;
+    margin-left:35px;
     max-width: 340px;
   }
 
@@ -133,7 +132,7 @@ const footerStyles = `
       gap: 40px 50px;
       padding: 48px 32px 40px;
     }
-    .footer-brand-desc { max-width: none; }
+    .footer-brand-desc { max-width: none; margin-left:35px; }
     .footer-below { padding: 20px 32px; }
   }
 

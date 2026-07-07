@@ -276,7 +276,7 @@ h6,
           align-items: center;
         }
         .hero-eyebrow {
-        margin-top:61px;
+        margin-top:81px;
           display: inline-flex;
           align-items: center;
           gap: 8px;
@@ -1548,7 +1548,7 @@ font-family: var(--font-ui), sans-serif;        }
         <section className="hero">
           <div className="hero-inner">
             <div className="hero-content">
-              <div className="hero-eyebrow">
+              <div className="hero-eyebrow pt-24 md:mt-32">
                 <span></span>Sadaiv Yuva Foundation
               </div>
               <h1>

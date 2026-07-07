@@ -67,7 +67,7 @@ export default function InspiringJourneysHero({
             : [{ newsId: 0, newsHeading: "प्रेरणादायक कहानियां जल्द उपलब्ध होंगी" } as NewsItem];
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A2E22] via-[#0C3527] to-[#0A2E22] pt-20 md:pt-16">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#0A2E22] via-[#0C3527] to-[#0A2E22] pt-28 md:pt-[70px]">
             {/* fine gold foil dot texture — reads as textile/pressed metal rather than a generic grid */}
             <div
                 className="pointer-events-none absolute inset-0 "
